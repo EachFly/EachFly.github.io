@@ -3,12 +3,13 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
+title: EachFly
+subtitle: '一起飞'
 description: ''
 keywords:
-author: John Doe
+author: EachFly
 language: en
+header-img: img/minimal_vector_tech_computer.jpg
 timezone: ''
 
 # URL
