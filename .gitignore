@@ -1,0 +1,17 @@
+node_modules/
+public/
+db.json
+.deploy_git/
+.cache/
+.tmp/
+
+.idea/
+.vscode/
+
+.DS_Store
+Thumbs.db
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
