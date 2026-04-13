@@ -1,0 +1,68 @@
+// Config
+support-for-ie = false
+vendor-prefixes = webkit moz ms official
+
+// Colors
+color-default = #20303c
+color-grey = #60707c
+color-border = #d9e3ea
+color-link = #0f766e
+color-background = #f4f7fb
+color-sidebar-text = #4d6270
+color-widget-background = rgba(255, 255, 255, 0.88)
+color-widget-border = rgba(183, 197, 208, 0.7)
+color-footer-background = #0f1720
+color-mobile-nav-background = #0f1720
+color-surface = rgba(255, 255, 255, 0.88)
+color-surface-strong = #ffffff
+color-accent-soft = #dff4f0
+color-hero-overlay = rgba(8, 18, 29, 0.58)
+color-hero-overlay-strong = rgba(8, 18, 29, 0.82)
+color-code-background = #111827
+color-code-border = #243244
+color-twitter = #00aced
+color-facebook = #3b5998
+color-pinterest = #cb2027
+color-linkedin = #0077B5
+
+// Fonts
+font-sans = "Avenir Next", "Segoe UI Variable", "SF Pro Display",
+    "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+    "Noto Sans SC", "Helvetica Neue",
+    sans-serif
+font-serif = Georgia, "Times New Roman", serif
+font-mono = "JetBrains Mono", "SFMono-Regular", Consolas, Monaco, Menlo, monospace
+font-icon = ForkAwesome
+font-size = 16px
+line-height = 1.8em
+line-height-title = 1.1em
+
+// Header
+logo-size = 58px
+subtitle-size = 18px
+banner-height = 430px
+banner-url = hexo-config("banner")
+
+sidebar = hexo-config("sidebar")
+
+// Layout
+block-margin = 36px
+article-padding = 34px
+mobile-nav-width = 280px
+main-column = 8
+sidebar-column = 4
+
+if sidebar and sidebar isnt bottom
+  _sidebar-column = sidebar-column
+else
+  _sidebar-column = 0
+
+// Grids
+column-width = 88px
+gutter-width = 28px
+columns = main-column + _sidebar-column
+
+// Media queries
+mq-mobile = "screen and (max-width: 479px)"
+mq-tablet = "screen and (min-width: 480px) and (max-width: 767px)"
+mq-normal = "screen and (min-width: 768px)"

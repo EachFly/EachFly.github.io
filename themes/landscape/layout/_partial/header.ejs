@@ -1,0 +1,51 @@
+<header id="header"<% if (is_home()) { %> class="is-home"<% } %>>
+  <div id="banner"></div>
+  <div class="header-backdrop"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        <% for (var i in theme.menu){ %>
+          <a class="main-nav-link" href="<%- url_for(theme.menu[i]) %>"><%= i %></a>
+        <% } %>
+      </nav>
+      <nav id="sub-nav">
+        <% if (theme.links) { %>
+          <% for (const i in theme.links) {%>
+            <a class="nav-icon" href="<%- url_for(theme.links[i]) %>"><span class="fa fa-<%= i %>"></span></a>
+          <% } %>
+        <% } %>
+        <% if (theme.rss){ %>
+          <a class="nav-icon" href="<%- url_for(theme.rss) %>" title="<%= __('rss_feed') %>"><span class="fa fa-rss"></span></a>
+        <% } %>
+        <a class="nav-icon nav-search-btn" title="<%= __('search') %>"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <%- search_form({button: '&#xF002;', text: __('search')}) %>
+      </div>
+    </div>
+    <div id="header-title" class="inner">
+      <p class="site-eyebrow">Tech Journal</p>
+      <h1 id="logo-wrap">
+        <a href="<%- url_for() %>" id="logo"><%= config.title %></a>
+      </h1>
+      <% if (theme.subtitle || config.subtitle){ %>
+        <h2 id="subtitle-wrap">
+          <a href="<%- url_for() %>" id="subtitle"><%= theme.subtitle || config.subtitle %></a>
+        </h2>
+      <% } %>
+      <p class="header-description">
+        <%= config.description || 'Notes on software, engineering craft, and the tools worth keeping close.' %>
+      </p>
+      <div class="header-actions">
+        <a class="header-action primary" href="<%- url_for() %>">Latest Posts</a>
+        <a class="header-action" href="<%- url_for(config.archive_dir) %>">Browse Archive</a>
+      </div>
+      <div class="header-meta">
+        <span><%= site.posts.length %> Posts</span>
+        <span><%= config.author || config.title %></span>
+        <span><%= config.language ? String(config.language).toUpperCase() : 'EN' %></span>
+      </div>
+    </div>
+  </div>
+</header>

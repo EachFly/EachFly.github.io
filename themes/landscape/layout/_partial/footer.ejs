@@ -1,0 +1,15 @@
+<footer id="footer">
+  <% if (theme.sidebar === 'bottom'){ %>
+    <%- partial('_partial/sidebar') %>
+  <% } %>
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      <p class="footer-brand"><%= config.title %></p>
+      <% if (theme.copyright){ %>
+        <%- render(theme.copyright, 'pug'); %>
+      <% } %>
+      <p>&copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %></p>
+      <p><%= __('powered_by') %> <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a></p>
+    </div>
+  </div>
+</footer>

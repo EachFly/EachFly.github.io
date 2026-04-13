@@ -1,0 +1,183 @@
+.article
+  margin: block-margin 0
+
+.article-inner
+  position: relative
+
+.article-meta
+  display: flex
+  align-items: center
+  gap: 10px
+  margin-bottom: 12px
+
+.article-date
+  float: none
+  margin-left: 0
+
+.article-category
+  float: none
+  color: color-grey
+  text-shadow: none
+  margin-left: 0
+  &:before
+    margin-right: 10px
+
+.article-category-link
+  margin: 0 0 1em
+
+.article-title
+  font-size: 2.15em
+  font-weight: 700
+  letter-spacing: -0.03em
+
+.article-entry a:hover
+  text-decoration: none
+  box-shadow: inset 0 -0.45em 0 rgba(20, 184, 166, 0.14)
+
+.article-entry img,
+.article-entry video
+  border-radius: 20px
+
+.article-entry blockquote
+  font-family: font-sans
+  margin: line-height 0
+  padding: 4px 0 4px 20px
+  border-left: 4px solid #14b8a6
+  text-align: left
+  color: color-grey
+
+.article-entry .caption
+  font-size: 0.88em
+  margin-top: 0.9em
+
+.article-more-link a
+  padding: 12px 18px
+  border-radius: 999px
+  background: color-accent-soft
+  color: color-link
+  font-weight: 600
+  text-shadow: none
+  &:hover
+    background: color-link
+    color: #fff
+    text-shadow: none
+
+.article-footer
+  display: flex
+  flex-wrap: wrap
+  gap: 14px
+  padding-top: 20px
+
+.article-footer a:hover
+  color: color-link
+
+.article-tag-list-link
+  display: inline-flex
+  align-items: center
+  padding: 6px 10px
+  border-radius: 999px
+  background: rgba(15, 118, 110, 0.08)
+  color: color-link
+
+.article-nav-link-wrap
+  text-shadow: none
+
+.article-share-box
+  box-shadow: 0 16px 32px rgba(15, 23, 32, 0.16)
+  border-radius: 18px
+
+.article-share-input
+  border-radius: 18px 18px 0 0
+
+.article-share-links
+  background: color-background
+
+.widget-title
+  margin-left: 0
+
+.widget
+  color: color-sidebar-text
+  text-shadow: none
+  background: color-widget-background
+  box-shadow: 0 20px 40px rgba(15, 23, 32, 0.08)
+  border: 1px solid color-widget-border
+  padding: 22px
+  border-radius: 24px
+
+.widget a:hover
+  text-decoration: none
+  color: color-link
+
+.tagcloud a
+  padding: 6px 10px
+  margin: 0 8px 8px 0
+  border-radius: 999px
+  background: rgba(37, 99, 235, 0.08)
+
+#footer
+  background: linear-gradient(180deg, #13212d, #0f1720)
+  padding: 72px 0
+  border-top: none
+  color: rgba(226, 232, 240, 0.68)
+
+#footer a
+  color: #8ce3d8
+
+#footer-info
+  font-size: 0.92em
+
+.footer-brand
+  font-size: 1.2em
+  font-weight: 700
+  color: #fff
+  margin-bottom: 14px
+
+.article-entry pre,
+.article-entry .highlight,
+.article-entry .gist
+  background: color-code-background
+  border-color: color-code-border
+  border-radius: 20px
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03)
+
+.article-entry code
+  background: rgba(15, 23, 32, 0.06)
+  text-shadow: none
+  padding: 0.15em 0.45em
+  border-radius: 8px
+
+.article-entry .highlight .gutter pre
+  color: rgba(203, 213, 225, 0.42)
+
+#page-nav .page-number,
+#page-nav .extend
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  min-width: 44px
+  height: 44px
+  margin: 0 6px
+  border-radius: 999px
+  border: 1px solid color-widget-border
+  background: color-surface
+  color: color-default
+  text-decoration: none
+
+#page-nav .page-number.current
+  background: color-link
+  border-color: color-link
+  color: #fff
+
+@media mq-mobile
+  .page-home #main
+    margin-top: -42px
+  .article-title
+    font-size: 1.7em
+  .article-header
+    padding: 24px 22px 0
+  .article-entry
+    padding: 0 22px
+  .article-footer
+    margin: 0 22px 22px
+  .widget
+    padding: 18px
