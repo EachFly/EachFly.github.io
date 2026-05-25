@@ -1,0 +1,53 @@
+name: Daily News
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # UTC 00:00 = 北京时间 08:00
+  workflow_dispatch:       # 支持手动触发
+
+permissions:
+  contents: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  fetch-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Fetch daily news
+        run: node tools/fetch-news.js
+
+      - name: Check for new posts
+        id: changes
+        run: |
+          git add source/_posts/
+          if git diff --cached --quiet; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "📭 No new posts generated"
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "📬 New posts detected"
+          fi
+
+      - name: Commit and push
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -m "📰 每日热点: $(date +%Y-%m-%d)"
+          git push

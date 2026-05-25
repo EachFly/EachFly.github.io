@@ -3,14 +3,13 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: EachFly
-subtitle: '一起飞'
-description: ''
-keywords:
+title: 每日热点
+subtitle: '每日科技、财经热点速递'
+description: '每日自动聚合科技与财经热点新闻，由 GitHub Actions 驱动'
+keywords: 每日热点,科技新闻,财经新闻,热点速递
 author: EachFly
-language: en
-header-img: img/minimal_vector_tech_computer.jpg
-timezone: ''
+language: zh-CN
+timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
@@ -62,7 +61,7 @@ prismjs:
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
   path: ''
-  per_page: 10
+  per_page: 15
   order_by: -date
 
 # Category & Tag
@@ -97,7 +96,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: fluid
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment

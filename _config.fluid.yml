@@ -1,0 +1,155 @@
+#---------------------------
+# 全局设置
+#---------------------------
+favicon: /img/fluid.png
+apple_touch_icon: /img/fluid.png
+title_join_string: " | "
+
+# 字体
+font:
+  font_size: 16px
+  font_family: '"Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif'
+  letter_spacing: 0.02em
+  code_font_size: 85%
+
+# 暗黑模式
+dark_mode:
+  enable: true
+  default: auto
+
+#---------------------------
+# 导航栏
+#---------------------------
+navbar:
+  blog_title: "每日热点"
+  ground_glass:
+    enable: true
+    px: 3
+    alpha: 0.7
+  menu:
+    - { key: "home", link: "/", icon: "iconfont icon-home-fill" }
+    - { key: "archive", link: "/archives/", icon: "iconfont icon-archive-fill" }
+    - { key: "category", link: "/categories/", icon: "iconfont icon-category-fill" }
+    - { key: "tag", link: "/tags/", icon: "iconfont icon-tags-fill" }
+    - { key: "about", link: "/about/", icon: "iconfont icon-user-fill" }
+
+#---------------------------
+# 首页
+#---------------------------
+index:
+  banner_img: /img/default.png
+  banner_img_height: 50
+  banner_mask_alpha: 0.3
+  slogan:
+    enable: true
+    text: "每日科技、财经热点速递"
+    typed:
+      enable: true
+      typeSpeed: 70
+      cursorChar: "_"
+      loop: false
+  auto_excerpt:
+    enable: true
+  post_url_target: _self
+  post_meta:
+    date: true
+    category: true
+    tag: true
+
+#---------------------------
+# 文章页
+#---------------------------
+post:
+  banner_img: /img/default.png
+  banner_img_height: 50
+  banner_mask_alpha: 0.3
+  meta:
+    author:
+      enable: false
+    date:
+      enable: true
+      format: "LL"
+    wordcount:
+      enable: true
+    min2read:
+      enable: true
+    views:
+      enable: false
+  updated:
+    enable: false
+  toc:
+    enable: true
+    placement: right
+    headingSelector: "h1,h2,h3"
+  copyright:
+    enable: false
+  prev_next:
+    enable: true
+  image_caption:
+    enable: true
+  image_zoom:
+    enable: true
+
+#---------------------------
+# 归档页
+#---------------------------
+archive:
+  banner_img: /img/default.png
+  banner_img_height: 50
+  banner_mask_alpha: 0.3
+  subtitle: "新闻归档"
+
+#---------------------------
+# 分类页
+#---------------------------
+category:
+  enable: true
+  banner_img: /img/default.png
+  banner_img_height: 50
+  banner_mask_alpha: 0.3
+
+#---------------------------
+# 标签页
+#---------------------------
+tag:
+  enable: true
+  banner_img: /img/default.png
+  banner_img_height: 50
+  banner_mask_alpha: 0.3
+  tagcloud:
+    min_font: 15
+    max_font: 30
+    unit: px
+
+#---------------------------
+# 关于页
+#---------------------------
+about:
+  banner_img: /img/default.png
+  banner_img_height: 50
+  banner_mask_alpha: 0.3
+  avatar: /img/fluid.png
+  name: "每日热点"
+  intro: "自动化新闻聚合站点，每日推送科技与财经热点资讯"
+  icons:
+    - { class: "iconfont icon-github-fill", link: "https://github.com/EachFly", tip: "GitHub" }
+
+#---------------------------
+# 页脚
+#---------------------------
+footer:
+  content: '
+    <div>
+      <span>📰 每日热点速递</span>
+      <br>
+      <span>由 GitHub Actions 自动更新 | Powered by Hexo & Fluid</span>
+    </div>
+  '
+  statistics:
+    enable: false
+
+#---------------------------
+# 图片懒加载
+#---------------------------
+lazyload:
+  enable: true
