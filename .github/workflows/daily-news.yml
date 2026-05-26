@@ -2,7 +2,8 @@ name: Daily News
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # UTC 00:00 = 北京时间 08:00
+    - cron: '0 0 * * *'   # UTC 00:00 = 北京时间 08:00（主）
+    - cron: '0 2 * * *'   # UTC 02:00 = 北京时间 10:00（备用）
   workflow_dispatch:       # 支持手动触发
 
 env:
@@ -17,19 +18,35 @@ jobs:
         with:
           token: ${{ secrets.PAT_TOKEN }}
 
+      - name: Check if already published today
+        id: check_duplicate
+        run: |
+          TODAY=$(date -u -d '+8 hours' +%Y-%m-%d)
+          if [ -f "source/_posts/daily-news-${TODAY}.md" ]; then
+            echo "skip=true" >> $GITHUB_OUTPUT
+            echo "📌 Today's post already exists, skipping"
+          else
+            echo "skip=false" >> $GITHUB_OUTPUT
+            echo "🚀 No post for today, proceeding"
+          fi
+
       - name: Setup Node.js
+        if: steps.check_duplicate.outputs.skip != 'true'
         uses: actions/setup-node@v6
         with:
           node-version: '20'
           cache: npm
 
       - name: Install dependencies
+        if: steps.check_duplicate.outputs.skip != 'true'
         run: npm ci
 
       - name: Fetch daily news
+        if: steps.check_duplicate.outputs.skip != 'true'
         run: node tools/fetch-news.js
 
       - name: Check for new posts
+        if: steps.check_duplicate.outputs.skip != 'true'
         id: changes
         run: |
           git add source/_posts/
@@ -42,7 +59,7 @@ jobs:
           fi
 
       - name: Commit and push
-        if: steps.changes.outputs.changed == 'true'
+        if: steps.check_duplicate.outputs.skip != 'true' && steps.changes.outputs.changed == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
